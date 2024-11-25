@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="Score" sid="259678001786146" static="0" type="number">0</variable>
+        <event-block sid="965448569675353">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="570290415111969" type="System" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="782578636110173" type="Player">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="0" name="Set text" sid="978478313666419" type="Score">
+                    <param id="0" name="Text">&quot;Score: &quot; &amp; Score</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="135556376923031">
+            <conditions>
+                <condition id="0" name="On click" sid="736209179119644" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="672218011014024" type="Player">
+                    <param id="0" name="Object">Spell</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="704669505298313">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="593916405159619" type="Spell">
+                    <param id="0" name="Object">Goblin</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="497193776983067" type="Goblin">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="816482089295497" type="Spell">
+                    <param id="0" name="Object">SparkFlash</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="435326758002460" type="Spell" />
+            </actions>
+        </event-block>
+        <event-block sid="594556695326748">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="350166529587189" type="System" />
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="503410159040969" type="Goblin">
+                    <param id="0" name="Angle">random(360)</param>
+                </action>
+                <action id="-15" name="Set visible" sid="428809041998124" type="GameOver">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="452243964991175">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="270082528904157" type="Goblin" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="596902064290280" type="Goblin">
+                    <param id="0" name="X">Player.X</param>
+                    <param id="1" name="Y">Player.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="748196291132697">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="784166260035084" type="Goblin">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="568894084772115" type="Goblin">
+                    <param id="0" name="Object">SparkFlash</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="944879460389262" type="Goblin" />
+                <action id="-10" name="Add to" sid="499712335487191" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="900984162380792">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="380233628084614" type="System">
+                    <param id="0" name="Interval (seconds)">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="537291902236139" type="System">
+                    <param id="0" name="Object to create">Goblin</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">LayoutWidth + 100</param>
+                    <param id="3" name="Y">random(LayoutHeight)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="251005937570796">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="252701165312608" type="Goblin">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="602699470602126" type="Player" />
+                <action id="-15" name="Set visible" sid="196396279753932" type="GameOver">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="634216343733441">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="802123961665669" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="662834454430181" type="System">
+                    <param id="0" name="First value">Player.Count</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="970115731713166" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="716853684995542" type="System">
+                    <param id="0" name="Layout">Main</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="655468876956106">
+            <conditions>
+                <condition id="-11" name="For Each" sid="155758720689780" type="System">
+                    <param id="0" name="Object">Goblin</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="674245969464884" type="System">
+                    <param id="0" name="First value">distance(Player.X, Player.Y, Goblin.X, Goblin.Y)</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">200</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-21" name="Rotate toward position" sid="457893229602203" type="Goblin">
+                    <param id="0" name="Degrees">1</param>
+                    <param id="1" name="X">Player.X</param>
+                    <param id="2" name="Y">Player.Y</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

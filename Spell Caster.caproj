@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Spell Caster</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>1m40ks7d89uso</unique-id>
+    <saved-with-version>28000</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>854</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="TiledBackground" sid="535548690377864">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\ASUS\Downloads\ground.png" />
+        </object-type>
+        <object-type name="Player" sid="922586543661160">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="8Direction" sid="794983707448510">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="ScrollTo" sid="567858224057184">
+                    <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="602295309630250">
+                    <behavior id="bound" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="138687216175189" speed="5">
+                    <frame duration="1" hotspotX="0.505495" hotspotY="0.504854" original-source="C:\Users\ASUS\Downloads\wizard.png">
+                        <image-point name="Imagepoint 1" x="1.02198" y="0.873786" />
+                        <collision-poly>
+                            <point x="0.241758" y="0.213592" />
+                            <point x="0.494505" y="0.0291262" />
+                            <point x="0.923077" y="0.0679612" />
+                            <point x="0.945055" y="0.951456" />
+                            <point x="0.494505" y="0.941748" />
+                            <point x="0.263736" y="0.76699" />
+                            <point x="0.021978" y="0.495146" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Goblin" sid="942433916505802">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Health" sid="319461363177064" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet" sid="389520908294733">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="232122979374717" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ASUS\Downloads\goblin.png">
+                        <collision-poly>
+                            <point x="0.25" y="0.134615" />
+                            <point x="0.5" y="0.0576923" />
+                            <point x="0.767857" y="0.125" />
+                            <point x="0.910714" y="0.5" />
+                            <point x="0.75" y="0.865385" />
+                            <point x="0.5" y="0.980769" />
+                            <point x="0.553571" y="0.701923" />
+                            <point x="0.0892857" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Spell" sid="798830147967889">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="963285661861516">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="779650099166708">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="156915375452719" speed="5">
+                    <frame duration="1" hotspotX="0.514286" hotspotY="0.515152" original-source="C:\Users\ASUS\Downloads\spell.png">
+                        <collision-poly>
+                            <point x="0.142857" y="0.151515" />
+                            <point x="0.485714" y="0.0606061" />
+                            <point x="0.8" y="0.212121" />
+                            <point x="0.914286" y="0.484848" />
+                            <point x="0.828571" y="0.818182" />
+                            <point x="0.485714" y="0.939394" />
+                            <point x="0.2" y="0.787879" />
+                            <point x="0.0857143" y="0.484848" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SparkFlash" sid="390475890804256">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="391048268486917">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="372087520348510" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\ASUS\Downloads\spark-flash.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="777518790646142">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Keyboard" sid="412469467771325">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Score" sid="766952536650666">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="GameOver" sid="130918437275225">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Main.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="13" />
+        <global-instance type="Keyboard" uid="14" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
